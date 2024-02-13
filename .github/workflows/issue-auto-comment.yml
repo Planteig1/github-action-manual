@@ -1,0 +1,12 @@
+name: Issues Auto Commenter
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  comments:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump Github Information
+        run: echo '${{ toJson( github )}} ' | jq
